@@ -1,0 +1,97 @@
+.secondPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .aboutMeContainer {
+    position: absolute;
+    width: 71%;
+    height: 100vh;
+    right: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cerotwo {
+    position: absolute;
+    font-size: 60rem;
+    color: white;
+    right: -200px;
+    font-weight: 500;
+    -webkit-text-stroke: 10px rgba(0, 0, 0, 0.2);
+  }
+  .aboutMeText {
+    padding: 200px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1368px) {
+  .secondPage {
+    .aboutMeContainer {
+      .cerotwo {
+        right: -250px;
+      }
+      .aboutMeText {
+        padding: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1034px) {
+  .secondPage {
+    .aboutMeContainer {
+      .cerotwo {
+        font-size: 50rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .secondPage {
+    .aboutMeContainer {
+      width: 100%;
+
+      .aboutMeText {
+        padding: 0px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .secondPage {
+    .aboutMeContainer {
+      .aboutMeText {
+        padding: 30px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .secondPage {
+    .aboutMeContainer {
+      margin-top: 50px;
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+}

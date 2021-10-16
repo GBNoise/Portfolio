@@ -1,0 +1,202 @@
+$TextFont: sans-serif;
+$PTextSize: 3rem;
+$TextNormal: 1rem;
+$LightBg: linear-gradient(
+  to right top,
+  #b64103,
+  #c54f03,
+  #d45e03,
+  #e36d02,
+  #f17c01
+);
+
+$DkBg: linear-gradient(
+  to right top,
+  #18012f,
+  #1d063d,
+  #24074b,
+  #2b0659,
+  #330568
+);
+
+.projectsPageSection {
+  height: 100vh;
+  width: 100%;
+  background-color: #0e0e0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: $DkBg;
+
+  .projectsContainer {
+    width: 80%;
+    min-height: 80%;
+    padding: 20px;
+    //background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+
+    .singleProject {
+      width: 10%;
+      height: 20vh;
+      border-radius: 20px;
+      background-color: #3333339f;
+      margin: auto;
+      animation: boxAnimP 0.7s forwards;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+
+      h1 {
+        //transform: translateY(-299px);
+        font-family: $TextFont;
+        font-size: $PTextSize;
+        position: absolute;
+        transition: all 1s ease;
+        animation: h1Appear 4s forwards;
+        @keyframes h1Appear {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+
+      .projectDescription {
+        transform: translateY(-450px);
+        width: 100%;
+        height: 100%;
+        //background: red;
+        border-radius: 20px;
+        transition: all 1s ease;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .spanDescription {
+          font-family: $TextFont;
+          font-weight: bold;
+          font-size: $TextNormal;
+        }
+        a {
+          font-family: $TextFont;
+          text-decoration: none;
+          color: rgb(255, 0, 0);
+          font-size: $TextNormal;
+          transition: all 0.5s ease;
+          font-weight: 800;
+        }
+        a:hover {
+          color: rgb(160, 0, 0);
+        }
+
+        .techTrigger {
+          transform: translateX(500px);
+          transition: all 5s ease;
+          width: 25%;
+          position: relative;
+          //border: solid red;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            object-fit: contain;
+            width: 15%;
+            margin: 10px;
+          }
+        }
+      }
+      @keyframes boxAnimP {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 80%;
+        }
+      }
+    }
+
+    .singleProject:hover {
+      h1 {
+        transform: translateY(299px);
+      }
+      .projectDescription {
+        transform: translateY(0px);
+      }
+      .techTrigger {
+        transform: translateX(0px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1378px) {
+  .projectsPageSection {
+    .projectsContainer {
+      .singleProject {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .projectsPageSection {
+    .projectsContainer {
+      grid-template-columns: 1fr;
+      .singleProject {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projectsPageSection {
+    .projectsContainer {
+      width: 100%;
+      .singleProject {
+        width: 90% !important;
+        .projectDescription {
+          .spanDescription {
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .projectsPageSection {
+    .projectsContainer {
+      width: 100%;
+      .singleProject {
+        width: 90% !important;
+        h1 {
+          font-size: 1.3rem;
+          padding: 5px;
+        }
+        .projectDescription {
+          .spanDescription {
+            padding-top: 10px;
+            font-size: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
