@@ -54,6 +54,20 @@
       a:hover {
         -webkit-text-stroke: 1px #f00;
       }
+
+      span {
+        & > :nth-child(1) {
+          animation: anim 2s infinite;
+          @keyframes anim {
+            from {
+              filter: hue-rotate(0);
+            }
+            to {
+              filter: hue-rotate(360deg);
+            }
+          }
+        }
+      }
     }
   }
   .fullStackText {
@@ -82,6 +96,24 @@
 
     .fullStackText {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .firstPage {
+    .fullStackText {
+      font-size: 4rem;
+      left: -250px;
+    }
+  }
+}
+
+@media screen and (max-height: 750px) {
+  .firstPage {
+    .fullStackText {
+      font-size: 3rem;
+      left: -190px;
     }
   }
 }

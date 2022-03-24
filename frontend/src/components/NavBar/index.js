@@ -1,8 +1,15 @@
 import React, { useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
+import cv from "./CV_GuillermoBolanos.pdf";
+
+const pages = { "/": "HOME", projects: "PROJECTS" };
+const sections = { second: "ABOUT ME", third: "SKILLS", fourth: "CONTACT ME" };
+
 export const NavBar = () => {
   const navRef = useRef(null);
   const [isNav, setIsNav] = useState(false);
+  const location = useLocation();
 
   function handleBurgerBtnClick() {
     if (!isNav) {
@@ -25,14 +32,23 @@ export const NavBar = () => {
       </div>
       <nav className="navBar" ref={navRef}>
         <ul>
+          {Object.entries(pages).map((el, i) => (
+            <li key={i} onClick={() => handleBurgerBtnClick()}>
+              <Link to={el[0]}>{el[1]}</Link>
+            </li>
+          ))}
+
+          {location.pathname === "/" &&
+            Object.entries(sections).map((el, i) => (
+              <li key={i} onClick={() => handleBurgerBtnClick()}>
+                <a href={"#" + el[0]}>{el[1]}</a>
+              </li>
+            ))}
+
           <li>
-            <a href="/">HOME</a>
-          </li>
-          <li>
-            <a href="/projects">PROJECTS</a>
-          </li>
-          <li>
-            <a href="#fourth">CONTACT ME</a>
+            <a href={cv} download="cv.pdf">
+              CV
+            </a>
           </li>
         </ul>
       </nav>

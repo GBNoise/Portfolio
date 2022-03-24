@@ -61,6 +61,30 @@
   position: absolute;
 }
 
+@media screen and (max-height: 940px) {
+  .homePage .titleBarContainer .titleBarPortfolio .titleBarPortfolio__Text {
+    font-size: 9rem;
+  }
+}
+
+@media screen and (max-height: 840px) {
+  .homePage .titleBarContainer .titleBarPortfolio .titleBarPortfolio__Text {
+    font-size: 8rem;
+  }
+}
+
+@media screen and (max-height: 740px) {
+  .homePage .titleBarContainer .titleBarPortfolio .titleBarPortfolio__Text {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-height: 640px) {
+  .homePage .titleBarContainer .titleBarPortfolio .titleBarPortfolio__Text {
+    font-size: 6rem;
+  }
+}
+
 .homePage .titleBarContainer .titleBarPortfolio .titleBarPortfolio__Text:nth-child(1) {
   -webkit-animation: appearText 2s forwards;
           animation: appearText 2s forwards;

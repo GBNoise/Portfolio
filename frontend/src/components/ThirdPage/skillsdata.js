@@ -17,28 +17,20 @@ export const skillsArr = [
   },
   {
     name: "React.js",
-    percentage: 90,
+    percentage: 70,
   },
 
   {
     name: "Node.js/ Express.js",
     percentage: 70,
   },
-  {
-    name: "C++",
-    percentage: 70,
-  },
 
   {
     name: "MongoDB ",
-    percentage: 80,
-  },
-  {
-    name: "Python",
     percentage: 70,
   },
   {
-    name: "Flask",
-    percentage: 60,
+    name: "MySql",
+    percentage: 70,
   },
 ];

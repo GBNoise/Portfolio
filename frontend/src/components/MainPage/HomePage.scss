@@ -37,6 +37,22 @@
         transform: rotate(90deg);
         font-size: 10rem;
         position: absolute;
+
+        @media screen and (max-height: 940px) {
+          font-size: 9rem;
+        }
+
+        @media screen and (max-height: 840px) {
+          font-size: 8rem;
+        }
+
+        @media screen and (max-height: 740px) {
+          font-size: 7rem;
+        }
+
+        @media screen and (max-height: 640px) {
+          font-size: 6rem;
+        }
       }
       .titleBarPortfolio__Text:nth-child(1) {
         animation: appearText 2s forwards;

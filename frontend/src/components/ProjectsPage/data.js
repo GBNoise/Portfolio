@@ -10,6 +10,8 @@ export const dataArr = [
       "My own personal portfolio, that I built to showcase the projects that I am working on, and the projects that I've finished, built with a elegant design sight using SCSS, React, Node/Express, and gsap.",
     imgs: [expressSvg, reactSvg, nodeSvg],
     link: "/",
+    gh: "https://github.com/GBNoise/Portfolio",
+    imgUrl: "/portfolioPreview.jpg",
     status: true,
   },
   {
@@ -17,7 +19,9 @@ export const dataArr = [
     description:
       "Movies App built to solidify my react skills, using the moviedb api to fetch all the movies information",
     imgs: [mongoSvg, expressSvg, reactSvg, nodeSvg],
+    gh: "https://github.com/GBNoise",
     link: "https://priceless-roentgen-4baadd.netlify.app",
+    imgUrl: "/moviesPreview.jpg",
     status: false,
   },
   // {
@@ -33,7 +37,9 @@ export const dataArr = [
     description:
       "A real time chat room, that implements sign up and login, using MERN STACK and pusher",
     imgs: [mongoSvg, expressSvg, reactSvg, nodeSvg],
+    gh: "https://github.com/GBNoise",
     link: "https://agitated-engelbart-a2b998.netlify.app/",
+    imgUrl: "../../imgs/portfolioPreview.jpg",
     status: false,
   },
 ];
