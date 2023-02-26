@@ -2,14 +2,13 @@ import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
+import { config } from "dotenv";
 const app = express();
-
-const CLIENT_ID =
-  "266468944986-9l3580cc3v57v8r285oucc2fpquorqk4.apps.googleusercontent.com";
-const CLIENT_SECRET = "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";
-const REDIRECT_URI = "https://developers.google.com/oauthplayground";
-const REFRESH_TOKEN =
-  "1//04tm30qzwc5rXCgYIARAAGAQSNgF-L9IryuOGywQ6vhxv4BJ9X2SRD-xMzVKX8AgVhGf87w2rcT7exxjRHL2dFwt_UNdzlFkzlQ";
+config();
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const REDIRECT_URI = process.env.REDIRECT_URI;
+const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
 
 const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
@@ -18,7 +17,11 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.ALLOWED_ORIGIN,
+  })
+);
 app.use(express.json());
 
 const port = process.env.PORT || 8000;
@@ -34,7 +37,7 @@ async function sendMail(email, body) {
       service: "gmail",
       auth: {
         type: "OAuth2",
-        user: "lolihrndz1997@gmail.com",
+        user: process.env.USER_EMAIL,
         clientId: CLIENT_ID,
         clientSecret: CLIENT_SECRET,
         refreshToken: REFRESH_TOKEN,
@@ -43,7 +46,7 @@ async function sendMail(email, body) {
     });
     const mailData = {
       from: email,
-      to: "lolihrndz1997@gmail.com",
+      to: process.env.USER_EMAIL,
       subject: "portfolio email",
       text: body + " email: " + email,
     };
